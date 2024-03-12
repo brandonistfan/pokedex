@@ -11,32 +11,14 @@ def catch_pokemon(url, pokedex_file):
         print(f"Failed to retreive data, status code: {response.status_code}")
 
 def get_data(data):
-    info = {}
-    name = data['species']['name']
+    name = data['species']['name'].capitalize()
 
-    type = ''
-    amount_of_types = len(data['types'])
+    types = [t['type']['name'].capitalize() for t in data['types']]
+    abilities = [a['ability']['name'].capitalize() for a in data['abilities']]
 
-    for t in range(amount_of_types):
-        if t == amount_of_types - 1:
-            type += data['types'][t]['type']['name'].capitalize()
-        else:
-            type += data['types'][t]['type']['name'].capitalize() + ", "
-
+    info = {'Pokemon': name, 'Info': {'Types': ', '.join(types), 'Abilities': ', '.join(abilities)}}
     
-    ability = ''
-    amount_of_abilities = len(data['abilities'])
-
-    for a in range(amount_of_abilities):
-        if a == amount_of_abilities - 1:
-            ability += data['abilities'][a]['ability']['name'].capitalize()
-        else:
-            ability += data['abilities'][a]['ability']['name'].capitalize() + ", "
-
-    info.update({'Pokemon': name.capitalize(), 'Info': {'Types': type, 'Abilities': ability}})
-    
-    print(name.capitalize() + ' has been successfully added to the pokedex.')
-
+    print(f"{name} has been successfully added to the pokedex.")
     return info
 
 
