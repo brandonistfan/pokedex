@@ -1,0 +1,37 @@
+[
+    {
+        "Pokemon": "Mewtwo",
+        "Info": {
+            "Types": "Psychic",
+            "Abilities": "Pressure, Unnerve"
+        }
+    },
+    {
+        "Pokemon": "Pikachu",
+        "Info": {
+            "Types": "Electric",
+            "Abilities": "Static, Lightning-rod"
+        }
+    },
+    {
+        "Pokemon": "Rayquaza",
+        "Info": {
+            "Types": "Dragon, Flying",
+            "Abilities": "Air-lock"
+        }
+    },
+    {
+        "Pokemon": "Squirtle",
+        "Info": {
+            "Types": "Water",
+            "Abilities": "Torrent, Rain-dish"
+        }
+    },
+    {
+        "Pokemon": "Onix",
+        "Info": {
+            "Types": "Rock, Ground",
+            "Abilities": "Rock-head, Sturdy, Weak-armor"
+        }
+    }
+]
