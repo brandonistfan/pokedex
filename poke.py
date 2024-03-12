@@ -58,20 +58,20 @@ def load_pokedex(pokedex_file):
 
     return data
 
-choice = input('Would you like to load or add pokemon (Load/Add): ').lower()
+choice = input('Would you like to load or add pokemon to your pokedex (Load/Add): ').lower()
 
-pokedex_file = input('Enter current pokedex: ')
+pokedex_file = input('Enter your pokedex: ')
 
 if choice == 'load':
     data = json.dumps(load_pokedex(pokedex_file), indent=4)
     if data == '[]':
-        print('The chosen pokedex is empty.')
+        print('The selected pokedex is empty.')
     else:
         print(data)
 
 elif choice == 'add':
 
-    pokemon = input('Enter pokemon to get data: ').lower()
+    pokemon = input('Enter the pokemon to add: ').lower()
 
     url = f'https://pokeapi.co/api/v2/pokemon/{pokemon}/'
 
