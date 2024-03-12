@@ -14,10 +14,10 @@
         }
     },
     {
-        "Pokemon": "Rayquaza",
+        "Pokemon": "Charizard",
         "Info": {
-            "Types": "Dragon, Flying",
-            "Abilities": "Air-lock"
+            "Types": "Fire, Flying",
+            "Abilities": "Blaze, Solar-power"
         }
     },
     {
@@ -25,13 +25,6 @@
         "Info": {
             "Types": "Water",
             "Abilities": "Torrent, Rain-dish"
-        }
-    },
-    {
-        "Pokemon": "Onix",
-        "Info": {
-            "Types": "Rock, Ground",
-            "Abilities": "Rock-head, Sturdy, Weak-armor"
         }
     }
 ]

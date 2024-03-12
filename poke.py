@@ -40,15 +40,16 @@ def append_pokedex(pokedex_file, pokemon_info):
 def remove_pokemon(pokedex_file, pokemon_to_delete):
     data = load_pokedex(pokedex_file)
     index = 0
-    for pokemon in data:
-        if pokemon['Pokemon'].lower() == pokemon_to_delete.lower():
-            print(pokemon['Pokemon'])
-            print(pokemon_to_delete)
-            del data[index]
-        index += 1
 
+    pokemon_to_remove = [pokemon for pokemon in data if pokemon['Pokemon'].lower() == pokemon_to_delete.lower()]
+
+    data = [pokemon for pokemon in data if pokemon not in pokemon_to_remove]
+    
     with open(pokedex_file, 'w') as pokedex:
         json.dump(data, pokedex, indent = 4)
+    
+    for pokemon in pokemon_to_remove:
+        print(f"{pokemon['Pokemon'].capitalize()} has been removed.")
 
 def load_pokedex(pokedex_file):
     try:
